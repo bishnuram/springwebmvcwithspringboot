@@ -1,0 +1,23 @@
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>User Edit Form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>Current User:<p th:text="${session.valuser.fname}"/>
+    <!-- action="${pageContext.request.contextPath}/updateUser"-->
+        <form action="#"  th:action="@{/updateUser}" th:object="${registerDto}">
+             <input type="hidden" th:field="*{id}" /> 
+       		First Name:<input type="text" th:field="*{fname}"/><br/>
+            Last Name:<input type="text" th:field="*{lname}" /><br/><br/>
+            Mobile No:<input type="text" th:field="*{mobile}" /><br/><br/>
+            Email/User Name:<input type="email" th:field="*{email}" /><br/><br/>
+            Password:<input type="password" th:field="*{password}" /><br/><br/>
+            <input type="submit"/>
+            
+        </form>
+    </body>
+</html>

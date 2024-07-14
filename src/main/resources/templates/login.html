@@ -1,0 +1,36 @@
+<!doctype html>
+    <html lang="en" xmlns:th="http://www.thymeleaf.org">
+      
+      
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Login Page</title>
+    
+  </head>
+  <body>
+<div class="container py-5">
+	<div class="row">
+		<div class="col-lg-6 max-auto rounded border p-4">
+			<h2 class="text-center mb-4">Enter User Credential</h2>
+			
+				<form th:action="@{/loginPage}" th:object="${appUser}" method="post">
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" th:field="*{email}" placeholder="Email" />
+        <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" th:field="*{password}" placeholder="Password" />
+        <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+    </div>
+    <button type="submit">Login</button>
+</form>
+
+</div>
+</div>
+</div>
+
+ </body>
+</html>

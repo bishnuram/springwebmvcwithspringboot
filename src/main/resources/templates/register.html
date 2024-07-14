@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Registration Form</title>
+   
+  </head>
+  <body>
+<div class="container py-5">
+	<div class="row">
+		<div class="col-lg-6 max-auto rounded border p-4">
+			<h2 class="text-center mb-4">Register New User</h2>
+		
+<form th:action="@{/registerForm}" method="post" th:object="${RegisterDto}">
+	
+  <div class="row mb-3">
+    <label class="col-sm-4 col-form-label">First Name*:</label>
+	<div class="col-sm-8">
+    <input type="text" class="form-control" th:field="*{fname}">
+	
+  </div>
+  </div>
+  
+  <div class="row mb-3">
+      <label class="col-sm-4 col-form-label">Last Name*:</label>
+  	<div class="col-sm-8">
+      <input type="text" class="form-control" th:field="*{lname}" >
+  	
+    </div>
+    </div>
+	
+	<div class="row mb-3">
+	    <label class="col-sm-4 col-form-label">Email*:</label>
+		<div class="col-sm-8">
+	    <input type="text" class="form-control" th:field="*{email}">
+			  </div>
+	  </div>
+	  
+	  <div class="row mb-3">
+	      <label class="col-sm-4 col-form-label">Mobile No:</label>
+	  	<div class="col-sm-8">
+	      <input type="text" class="form-control"th:field="*{mobile}">
+	  	
+	    </div>
+	    </div>
+		
+		<div class="row mb-3">
+		    <label class="col-sm-4 col-form-label">Password*:</label>
+			<div class="col-sm-8">
+		    <input type="password" class="form-control" th:field="*{password}" >
+			 </div>
+		  </div>
+		  <div class="row mb-3">
+			<div class="offset-sm-4 col-sm-4 d-grid">
+		   <button type="submit" class="btn btn-primary">Register</button></div>
+		   <div class="col-sm-4 d-grid">
+  <a href="/" class="btn btn-outline-primary">Cancel</a></div></div>
+</form>
+</div>
+</div>
+</div>
+
+ </body>
+</html>
